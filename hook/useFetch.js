@@ -32,9 +32,15 @@ const useFetch = (endpoint, query) => {
       setData(response.data.data);
       setIsLoading(false);
     } catch (error) {
-      setError(error);
-      console.log(error);
-      alert(error);
+      if (error.response.status === 429) {
+        // Add a delay of 2 second before retrying the request
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        fetchData();
+      } else {
+        setError(error);
+        console.log(error);
+        alert(error);
+      }
     } finally {
       setIsLoading(false);
     }

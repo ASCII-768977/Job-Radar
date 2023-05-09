@@ -52,9 +52,16 @@ const JobSearch = () => {
       const response = await axios.request(options);
       setSearchResult(response.data.data);
     } catch (error) {
+      if (error.response.status === 429) {
+        // Add a delay of 2 second before retrying the request
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        fetchData();
+      } else {
+        setSearchError(error);
+        console.log(error);
+        alert(error);
+      }
       setSearchError(error);
-      console.log(error);
-      alert(error);
     } finally {
       setSearchLoader(false);
     }

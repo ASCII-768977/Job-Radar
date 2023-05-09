@@ -3,7 +3,6 @@ import { View, Text, Image } from 'react-native';
 
 import styles from './company.style';
 import { icons } from '../../../constants';
-import defaultJobIcon from '../../../constants/icons';
 import { checkImageURL } from '../../../utils';
 
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
@@ -12,7 +11,9 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
       <View style={styles.logoBox}>
         <Image
           source={{
-            uri: checkImageURL(companyLogo) ? companyLogo : defaultJobIcon,
+            uri: checkImageURL(companyLogo)
+              ? companyLogo
+              : 'https://raw.githubusercontent.com/ASCII-768977/Job-Search/main/assets/icons/default.png',
           }}
           style={styles.logoImage}
         />

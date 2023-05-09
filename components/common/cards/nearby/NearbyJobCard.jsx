@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import styles from './nearbyjobcard.style';
-import  defaultJobIcon  from '../../../../constants/icons';
 import { checkImageURL } from '../../../../utils';
 
 const NearbyJobCard = ({ job, handleNavigate }) => {
@@ -12,7 +11,7 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
           source={{
             uri: checkImageURL(job.employer_logo)
               ? job.employer_logo
-              : defaultJobIcon,
+              : 'https://raw.githubusercontent.com/ASCII-768977/Job-Search/main/assets/icons/default.png',
           }}
           resizeMode="contain"
           style={styles.logImage}

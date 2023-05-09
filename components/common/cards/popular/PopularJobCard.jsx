@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import styles from './popularjobcard.style';
-import defaultJobIcon from '../../../../constants/icons';
 import { checkImageURL } from '../../../../utils';
 
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
@@ -15,7 +14,7 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
           source={{
             uri: checkImageURL(item?.employer_logo)
               ? item.employer_logo
-              : defaultJobIcon,
+              : 'https://raw.githubusercontent.com/ASCII-768977/Job-Search/main/assets/icons/default.png',
           }}
           resizeMode="contain"
           style={styles.logoImage}
