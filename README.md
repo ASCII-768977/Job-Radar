@@ -1,3 +1,11 @@
+# Job Search
+
+### ***Go to AppStore and download "Expo Go": https://apps.apple.com/cn/app/expo-go/id982107779?l=en***
+### <img src="public/livedemo.svg" width="200px" align="right"/> ***See live demo here or scan the QR code: https://expo.dev/@forrestlin/Job-Search?serviceType=classic&distribution=expo-go*** 
+
+
+![Screenshot](public/screenshot.png)
+
 # Expo Router Example
 
 Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
